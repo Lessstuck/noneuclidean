@@ -1,3 +1,6 @@
 exports.beat = function () {
-    return 666;
+    setInterval(() => {
+        console.log("foo")
+    }, 500);
 };
+
