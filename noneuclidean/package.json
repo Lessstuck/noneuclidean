@@ -1,5 +1,5 @@
 {
-  "name": "lesstuck",
+  "name": "noneuclidean",
   "version": "1.0.0",
   "description": "non-repetitive rhythmic event generator ",
   "main": "index.js",
