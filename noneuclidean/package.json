@@ -1,0 +1,25 @@
+{
+  "name": "lesstuck",
+  "version": "1.0.0",
+  "description": "non-repetitive rhythmic event generator ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lessstuck/noneuclidean.git"
+  },
+  "keywords": [
+    "noneucliden",
+    "rhythm",
+    "music",
+    "euclidean"
+  ],
+  "author": "Les Stuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lessstuck/noneuclidean/issues"
+  },
+  "homepage": "https://github.com/Lessstuck/noneuclidean#readme"
+}
