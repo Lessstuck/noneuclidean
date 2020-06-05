@@ -1,3 +1,3 @@
-beat = require('./noneuclidean.js')
+beat = require('./noneuclidean/index.js')
 
 beat.beat();
