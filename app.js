@@ -1,6 +1,7 @@
 const beat = require('./noneuclidean/index.js');
 // const {Howl, Howler} = require('howler')
 const player = require('node-wav-player');
+var events = require('events');
 
 
 player.play({
