@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/Lessstuck/noneuclidean/issues"
   },
-  "homepage": "https://github.com/Lessstuck/noneuclidean#readme"
+  "homepage": "https://github.com/Lessstuck/noneuclidean#readme",
+  "dependencies": {}
 }
