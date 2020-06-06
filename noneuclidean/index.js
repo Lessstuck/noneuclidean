@@ -9,14 +9,19 @@ var myEventHandler = function () {
 //Assign the event handler to an event:
 eventEmitter.on('scream', myEventHandler);
 
+const hit = () => {
+    console.log('hit');
+    return (1);
+}
 
 const beat = () => {
     setInterval(() => {
         console.log("foo");
-
+        hit();
         //Fire the 'scream' event:
         eventEmitter.emit('scream'); 
     }, 500);
 }
 
-exports.beat = beat
+exports.beat = beat;
+exports.hit = hit;

@@ -2,7 +2,7 @@ const beat = require('./noneuclidean/index.js');
 // const {Howl, Howler} = require('howler')
 const player = require('node-wav-player');
 var events = require('events');
-
+const eventEmitter = events.EventEmitter();
 
 player.play({
     path: './snd/808_Closed_HH.m4a',
