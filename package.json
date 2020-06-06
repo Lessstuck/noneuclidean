@@ -4,7 +4,8 @@
   "description": "environment for assembling cross-platform tests for noneuclidean project",
   "main": "app.js",
   "dependencies": {
-    "howler": "^2.2.0"
+    "howler": "^2.2.0",
+    "node-wav-player": "^0.1.0"
   },
   "devDependencies": {},
   "scripts": {
