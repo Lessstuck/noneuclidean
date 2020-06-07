@@ -1,5 +1,14 @@
-const beat = require('./noneuclidean/index.js');
+const play = require('./noneuclidean/index.js');
 const player = require('node-wav-player');
+
+const beat = () => {
+    setInterval(() => {
+        let playit = play.play();
+        if (playit == 1) {
+            hit();
+        };
+    }, 500);
+}
 
 const hit = () => {
     player.play({
@@ -11,5 +20,5 @@ const hit = () => {
     });
 }
 
-exports.hit = hit;
-beat.beat();
+
+beat();
