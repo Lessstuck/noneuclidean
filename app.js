@@ -1,12 +1,5 @@
 const beat = require('./noneuclidean/index.js');
-// const {Howl, Howler} = require('howler')
 const player = require('node-wav-player');
-
-
-var events = require('events');
-const eventEmitter = events.EventEmitter();
-
-
 
 const hit = () => {
     player.play({
@@ -18,11 +11,5 @@ const hit = () => {
     });
 }
 
-
-
-// var sound = new Howl({
-//     src: ['./snd/808_Closed_HH.m4a']
-// });
-// sound.play();
 exports.hit = hit;
 beat.beat();
