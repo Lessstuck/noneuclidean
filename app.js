@@ -1,7 +1,8 @@
-const Track = require('./noneuclidean/index.js');
+const track = require('./noneuclidean/index.js');
 const player = require('node-wav-player');
 
-// const track1 = new Track();
+var track1 = new track.Track();
+var track2 = new track.Track();
 
 // generate pulse and call noneucledean hit method
 const beat = () => {
