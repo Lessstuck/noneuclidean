@@ -18,7 +18,6 @@ class Track {
         else if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();
             let beatProbAccum = 0.;
-            var i;
             for (i = 0; i < this.beatProb.length; i++)    {
                 beatProbAccum = beatProbAccum + this.beatProb[i]
                 if (coinToss < beatProbAccum) {
