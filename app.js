@@ -19,7 +19,7 @@ var tracks = [];
 for (i = 0; i < trackCount; i++)    {
     let newInstrument = new Instrument('kik', './snd/808_Kick_x3.m4a');
     instruments.push(newInstrument);
-    let newTrack = new track.Track();
+    let newTrack = new track.Track('kik', [.33, .33, .33]);
     tracks.push(newTrack);
 }
 

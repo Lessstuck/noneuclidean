@@ -1,14 +1,13 @@
 let count = Math.random(5);
 
 class Track {
-    constructor(name) {
+    constructor(name, beatProb) {
         this.name = name;
-        this.beatProb = [.33, .33, .33];
+        this.beatProb = beatProb;
         this.beatCount = 0;
         this.maxBeats = 3;
     }
     play = () => {
-        // console.log("beat count: " + this.beatCount);
         // play sound on first count
         if (this.beatCount == 0) {
             this.beatCount++;
