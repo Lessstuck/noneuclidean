@@ -1,7 +1,7 @@
 let count = Math.random(5);
 
 class Track {
-    constructor(name, beatProb) {
+    constructor(name = "someInstrument", beatProb = [.33, .33, .33]) {
         this.name = name;
         this.beatProb = beatProb;
         this.beatCount = 0;
