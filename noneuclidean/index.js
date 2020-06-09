@@ -8,19 +8,21 @@ class Track {
         this.maxBeats = 3;
     }
     play = () => {
-        if (beatCount == 0) {
+        console.log("beat count: " + this.beatCount);
+        if (this.beatCount == 0) {
             // play sound
-            beatCount++;
+            this.beatCount++;
             return 1;
         }
-        else if (beatCount == maxBeats) {
+        else if (this.beatCount == this.maxBeats) {
             // find new maxBeats
-            coinToss = Math.random();
-            beatProbAccum = 0.;
-            for (i = 0; i < this.beatProb.length(); i++)    {
-                beatProbAccum = beatProbAccum + this.beatProb[i]
-                if (coinToss < beatProbAccum) {
-                    maxBeats = i + 1 // lengths 1, 2, 3 – convert to dict?
+            this.coinToss = Math.random();
+            this.beatProbAccum = 0.;
+            var i;
+            for (i = 0; i < this.beatProb.length; i++)    {
+                this.beatProbAccum = this.beatProbAccum + this.beatProb[i]
+                if (this.coinToss < this.beatProbAccum) {
+                    this.maxBeats = i + 1 // lengths 1, 2, 3 – convert to dict?
                     this.beatCount = 0;
 
                     return 0; 
@@ -28,11 +30,9 @@ class Track {
             }
         }
         else {
-            beatCount++; 
+            this.beatCount++; 
         }
     }
 }
-
-const track1 = new Track("hh");
 
 exports.Track = Track;
