@@ -22,7 +22,6 @@ class Track {
                 if (coinToss < beatProbAccum) {
                     this.maxBeats = i + 1 // lengths 1, 2, 3 – convert to dict?
                     this.beatCount = 0;
-
                     return 0; 
                 }
             }
