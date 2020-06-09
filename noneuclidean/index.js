@@ -8,7 +8,7 @@ class Track {
         this.maxBeats = 3;
     }
     play = () => {
-        console.log("beat count: " + this.beatCount);
+        // console.log("beat count: " + this.beatCount);
         // play sound on first count
         if (this.beatCount == 0) {
             this.beatCount++;
