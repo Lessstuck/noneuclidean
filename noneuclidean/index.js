@@ -16,12 +16,12 @@ class Track {
         }
         else if (this.beatCount == this.maxBeats) {
             // find new maxBeats
-            this.coinToss = Math.random();
-            this.beatProbAccum = 0.;
+            let coinToss = Math.random();
+            let beatProbAccum = 0.;
             var i;
             for (i = 0; i < this.beatProb.length; i++)    {
-                this.beatProbAccum = this.beatProbAccum + this.beatProb[i]
-                if (this.coinToss < this.beatProbAccum) {
+                beatProbAccum = beatProbAccum + this.beatProb[i]
+                if (coinToss < beatProbAccum) {
                     this.maxBeats = i + 1 // lengths 1, 2, 3 – convert to dict?
                     this.beatCount = 0;
 
