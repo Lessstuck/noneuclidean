@@ -9,13 +9,13 @@ class Track {
     }
     play = () => {
         console.log("beat count: " + this.beatCount);
+        // play sound on first count
         if (this.beatCount == 0) {
-            // play sound
             this.beatCount++;
             return 1;
         }
+        // find new maxBeats at end of count
         else if (this.beatCount == this.maxBeats) {
-            // find new maxBeats
             let coinToss = Math.random();
             let beatProbAccum = 0.;
             var i;
@@ -29,6 +29,7 @@ class Track {
                 }
             }
         }
+        // just count
         else {
             this.beatCount++; 
         }
