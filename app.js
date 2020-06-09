@@ -23,7 +23,7 @@ for (i = 0; i < trackCount; i++)    {
     tracks.push(newTrack);
 }
 
-// generate pulse and call noneucledean hit method
+// generate pulse and call noneucledean Track.play method
 const beat = () => {
     setInterval(() => {
         for (j = 0; j < trackCount; j++)    {
