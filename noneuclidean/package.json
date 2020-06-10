@@ -1,6 +1,6 @@
 {
   "name": "noneuclidean",
-  "version": "1.0.1",
+  "version": "1.3.0",
   "description": "non-repetitive rhythmic event generator ",
   "main": "index.js",
   "scripts": {
