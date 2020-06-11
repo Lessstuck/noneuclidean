@@ -1,0 +1,28 @@
+{
+  "name": "maxhost",
+  "version": "1.0.0",
+  "description": "MaxMSP hosting for noneuclidean.js using node.script",
+  "main": "maxWrapper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lessstuck/noneuclidean.git"
+  },
+  "keywords": [
+    "maxmsp",
+    "node.script",
+    "noneuclidean",
+    "rhythm"
+  ],
+  "author": "Les Stuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lessstuck/noneuclidean/issues"
+  },
+  "homepage": "https://github.com/Lessstuck/noneuclidean#readme",
+  "dependencies": {
+    "noneuclidean": "^1.2.0"
+  }
+}
