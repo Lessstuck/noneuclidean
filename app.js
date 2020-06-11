@@ -16,7 +16,7 @@ class Instrument    {
 instParams = [["kik", './snd/808_Kick_x3.m4a'],
     ["hh", "./snd/808_Closed_HH.m4a"]]
 
-// crete arrays of Instrument & Track objects
+// create arrays of Instrument & Track objects
 const trackCount = 2;
 var instruments = [];
 var tracks = [];
