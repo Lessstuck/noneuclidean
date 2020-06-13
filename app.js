@@ -4,7 +4,6 @@ const player = require('node-wav-player');
 // create instruments
 class Instrument    {
     constructor(path) {
-        // this.name = name;
         this.path = path;
     }
     play = (name) => {
@@ -43,7 +42,6 @@ const hit = (path) => {
     player.play({
         path: path,
     }).then(() => {
-        // console.log('play start.');
     }).catch((error) => {
         console.error(error);
     });

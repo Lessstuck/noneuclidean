@@ -2,7 +2,6 @@ let count = Math.random(5);
 
 class Track {
     constructor(beatProb = [.33, .33, .33]) {
-        // this.name = name;
         this.beatProb = beatProb;
         this.beatCount = 0;
         this.maxBeats = 3;
