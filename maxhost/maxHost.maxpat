@@ -169,7 +169,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 87.771428571428572, "ticks" ],
+						"originallength" : [ 511.303401360544285, "ticks" ],
 						"originaltempo" : 120.0,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
