@@ -40,6 +40,76 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"basictuning" : 440,
+					"clipheight" : 29.0,
+					"data" : 					{
+						"clips" : [ 							{
+								"absolutepath" : "808_Clap.m4a",
+								"filename" : "808_Clap.m4a",
+								"filekind" : "audiofile",
+								"id" : "u590009396",
+								"loop" : 0,
+								"content_state" : 								{
+
+								}
+
+							}
+, 							{
+								"absolutepath" : "808_Closed_HH.m4a",
+								"filename" : "808_Closed_HH.m4a",
+								"filekind" : "audiofile",
+								"id" : "u323009401",
+								"loop" : 0,
+								"content_state" : 								{
+
+								}
+
+							}
+, 							{
+								"absolutepath" : "808_Kick_x3.m4a",
+								"filename" : "808_Kick_x3.m4a",
+								"filekind" : "audiofile",
+								"id" : "u614009404",
+								"loop" : 0,
+								"content_state" : 								{
+
+								}
+
+							}
+, 							{
+								"absolutepath" : "808_Snare_1.m4a",
+								"filename" : "808_Snare_1.m4a",
+								"filekind" : "audiofile",
+								"id" : "u916009407",
+								"loop" : 0,
+								"content_state" : 								{
+
+								}
+
+							}
+ ]
+					}
+,
+					"followglobaltempo" : 0,
+					"formantcorrection" : 0,
+					"id" : "obj-5",
+					"maxclass" : "playlist~",
+					"mode" : "basic",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"originallength" : [ 0.0, "ticks" ],
+					"originaltempo" : 120.0,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 188.0, 304.0, 150.0, 120.0 ],
+					"pitchcorrection" : 0,
+					"quality" : "basic",
+					"timestretch" : [ 0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
@@ -99,7 +169,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 511.303401360544285, "ticks" ],
+						"originallength" : [ 87.771428571428572, "ticks" ],
 						"originaltempo" : 120.0,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -326,8 +396,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -462,6 +530,34 @@
 				"name" : "fit_jweb_to_bounds.js",
 				"bootpath" : "C74:/packages/Node For Max/patchers/debug-monitor",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "808_Clap.m4a",
+				"bootpath" : "~/Documents/GitHub/noneuclidean/snd",
+				"patcherrelativepath" : "../snd",
+				"type" : "M4a",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "808_Closed_HH.m4a",
+				"bootpath" : "~/Documents/GitHub/noneuclidean/snd",
+				"patcherrelativepath" : "../snd",
+				"type" : "M4a",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "808_Kick_x3.m4a",
+				"bootpath" : "~/Documents/GitHub/noneuclidean/snd",
+				"patcherrelativepath" : "../snd",
+				"type" : "M4a",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "808_Snare_1.m4a",
+				"bootpath" : "~/Documents/GitHub/noneuclidean/snd",
+				"patcherrelativepath" : "../snd",
+				"type" : "M4a",
 				"implicit" : 1
 			}
  ],
