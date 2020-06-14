@@ -9,21 +9,17 @@ In your terminal, install noneuclidean module and your choice of sound player:
     npm install noneuclidean;
     npm install node-wav-player;
 
-
 In your node app:
 
     const track = require('noneuclidean');
     const player = require('node-wav-player');
     
-A track takes two parameters, "name" and "beatProb".
-"name" will be referenced by track().
-"beatProb" is an array of the relative probability (0.0 - 1.0) that a beat count (index + 1) will be chosen.
+A track takes one parameter, "beatProb", an array of the relative probability (0.0 - 1.0) that a beat count (index + 1) will be chosen.
 
-Then define instruments:
+Define instruments:
 
     class Instrument    {
-        constructor(name, path) {
-            this.name = name;
+        constructor(path) {
             this.path = path;
         }
         play = (name) => {
@@ -47,8 +43,8 @@ Then define instruments:
 
 • Create an array of instrument parameters:
 
-    // instrument data aray of arrays = name, path
-    instParams = [["kik", './snd/808_Kick_x3.m4a'], ["hh", "./snd/808_Closed_HH.m4a"]]
+    instParams = ['./snd/808_Kick_x3.m4a',
+        "./snd/808_Closed_HH.m4a"]
     
 • Create arrays of Instrument & Track objects:
 
