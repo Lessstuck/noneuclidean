@@ -73,3 +73,10 @@ Define instruments:
 Finally, call "beat":
 
     beat();
+
+
+### Use with Max’s node.script object
+    
+Open patch "maxHost.maxpat". The node.script object loads maxWrapper.js, which requires noneuclidean. 
+ 
+Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse.
