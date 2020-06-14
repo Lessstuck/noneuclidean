@@ -4,7 +4,7 @@ class Track {
     constructor(beatProb = [.33, .33, .33]) {
         this.beatProb = beatProb;
         this.beatCount = 0;
-        this.maxBeats = 3;
+        this.maxBeats = 2;
     }
     play = () => {
         // play sound on first count
@@ -16,10 +16,12 @@ class Track {
         else if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();
             let beatProbAccum = 0.;
-            for (i = 0; i < this.beatProb.length; i++)    {
-                beatProbAccum = beatProbAccum + this.beatProb[i]
+            var maxCount = this.beatProb.length;
+            var m = 0;
+            for (m = 0; m < maxCount; m++)    {
+                beatProbAccum = beatProbAccum + this.beatProb[m]
                 if (coinToss < beatProbAccum) {
-                    this.maxBeats = i + 1 // lengths 1, 2, 3 – convert to dict?
+                    this.maxBeats = m + 1 // lengths 1, 2, 3
                     this.beatCount = 0;
                     return 0; 
                 }
