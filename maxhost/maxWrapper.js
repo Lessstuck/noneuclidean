@@ -3,11 +3,26 @@ const track = require('../noneuclidean/index.js');
 
 var tracks = [];
 var trackCount = 0;
+var instruments = [];
+var instrumentCount = 0;
 
-maxAPI.addHandler("clear", () => {
-    tracks = [];
+
+// create instruments - node version includes sound playback
+class Instrument {
+    constructor(path) {
+        this.path = path;
+    }
+    play = (path) => {
+        hit(path);
+    }
+}
+
+// instParams
+maxAPI.addHandler("instParams", (...args) => {
+    let newInstrument = new instrument.Instrument(args);
+    instruments.push(newInstrument);
+    instrumentCount++;
 });
-
 
 beatProb = [];
 
@@ -31,6 +46,12 @@ const handlers = {
             trackCount++;
         // }    
     }
+
 };
 
 maxAPI.addHandlers(handlers);
+
+maxAPI.addHandler("clear", () => {
+    tracks.length = 0;
+    instruments.length = 0;
+});

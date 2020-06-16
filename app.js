@@ -6,14 +6,17 @@ class Instrument    {
     constructor(path) {
         this.path = path;
     }
-    play = (name) => {
+    play = (path) => {
         hit(path);
     }
 }
 
 // instrument data aray of arrays = path
-instParams = ['./snd/808_Kick_x3.m4a',
-    "./snd/808_Closed_HH.m4a"]
+instParams = 
+['./snd/808_Clap.m4a',
+'./snd/808_Closed_HH.m4a',
+'./snd/808_Kick_x3.m4a',
+'./snd/808_Snare_1.m4a']
 
 // create arrays of Instrument & Track objects
 const trackCount = 2;
