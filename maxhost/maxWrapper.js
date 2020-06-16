@@ -1,12 +1,6 @@
 const maxAPI = require('max-api');
 const track = require('../noneuclidean/index.js');
 
-var tracks = [];
-var trackCount = 0;
-var instruments = [];
-var instrumentCount = 0;
-
-
 // create instruments - node version includes sound playback
 class Instrument {
     constructor(path) {
@@ -17,9 +11,14 @@ class Instrument {
     }
 }
 
+var tracks = [];
+var trackCount = 0;
+var instruments = [];
+var instrumentCount = 0;
+
 // instParams
 maxAPI.addHandler("instParams", (...args) => {
-    let newInstrument = new instrument.Instrument(args);
+    let newInstrument = new Instrument(args);
     instruments.push(newInstrument);
     instrumentCount++;
 });
