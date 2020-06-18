@@ -19,7 +19,7 @@ instParams =
 './snd/808_Snare_1.m4a']
 
 // create arrays of Instrument & Track objects
-const trackCount = 2;
+const trackCount = instParams.length;
 var instruments = [];
 var tracks = [];
 for (i = 0; i < trackCount; i++)    {

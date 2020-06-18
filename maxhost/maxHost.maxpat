@@ -40,6 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+<<<<<<< HEAD
 					"id" : "obj-3",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -53,6 +54,8 @@
 			}
 , 			{
 				"box" : 				{
+=======
+>>>>>>> 4963728625f99170d025154765f2fd3a15d59bd1
 					"id" : "obj-9",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -274,6 +277,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -351,6 +356,23 @@
 				"patchline" : 				{
 					"destination" : [ "obj-25", 1 ],
 					"source" : [ "obj-23", 1 ]
+<<<<<<< HEAD
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 1 ],
+					"source" : [ "obj-25", 1 ]
+=======
+>>>>>>> 4963728625f99170d025154765f2fd3a15d59bd1
 				}
 
 			}
@@ -370,29 +392,25 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
+<<<<<<< HEAD
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-3", 0 ]
+=======
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-25", 0 ]
+>>>>>>> 4963728625f99170d025154765f2fd3a15d59bd1
 				}
 
 			}
 , 			{
 				"patchline" : 				{
+<<<<<<< HEAD
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-7", 0 ]
+=======
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-28", 0 ]
+>>>>>>> 4963728625f99170d025154765f2fd3a15d59bd1
 				}
 
 			}
@@ -400,6 +418,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
