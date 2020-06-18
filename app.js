@@ -26,6 +26,7 @@ for (i = 0; i < trackCount; i++)    {
     let newInstrument = new Instrument(instParams[i]);
     instruments.push(newInstrument);
     let newTrack = new track.Track([.33, .33, .33]);
+    newTrack.play();
     tracks.push(newTrack);
 }
 

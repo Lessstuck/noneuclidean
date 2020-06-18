@@ -22,8 +22,10 @@ const handlers = {
     },
     [maxAPI.MESSAGE_TYPES.LIST]: (...args) => {
             let newTrack = new track.Track(args);
+            newTrack.play();
             tracks.push(newTrack);
             trackCount++;
+
         // }    
     }
 

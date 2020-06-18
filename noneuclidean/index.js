@@ -4,7 +4,7 @@ class Track {
     constructor(beatProb = [.33, .33, .33]) {
         this.beatProb = beatProb;
         this.beatCount = 0;
-        this.maxBeats = 2;
+        this.maxBeats = 0;
     }
     play = () => {
         // find new maxBeats at end of count
