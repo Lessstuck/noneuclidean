@@ -6,8 +6,8 @@ const Patches = require('Patches');
 const AudioObject = require("sparkar-audio-object");
 const TouchGestures = require('TouchGestures');
 
-const Noneuclidean = require('index-compiled.js');
-const noneuclidean = Noneuclidean.new();
+const Noneuclidean = require('noneuclidean');
+var noneuclidean = new Noneuclidean;
 
 const fallTime = 1000;
 
