@@ -9,10 +9,6 @@ const TouchGestures = require('TouchGestures');
 const Noneuclidean = require('../noneuclidean/index.js');
 const noneuclidean = new Noneuclidean();
 
-require("@babel/core").transform("code", {
-    plugins: ["@babel/plugin-proposal-class-properties"]
-});
-
 
 const fallTime = 1000;
 
