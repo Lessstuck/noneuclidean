@@ -1,10 +1,12 @@
 let count = Math.random(5);
 
-function Track(beatProb)    {
-    this.beatProb = [.33, .33, .33];
-    this.beatCount = 0;
-    this.maxBeats = 0;
-    this.play = function() {
+class Track {
+    constructor(beatProb = [.33, .33, .33]) {
+        this.beatProb = beatProb;
+        this.beatCount = 0;
+        this.maxBeats = 0;
+    }
+    play = () => {
         // find new maxBeats at end of count
         if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();
