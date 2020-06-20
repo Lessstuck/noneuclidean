@@ -7,6 +7,12 @@ const AudioObject = require("sparkar-audio-object");
 const TouchGestures = require('TouchGestures');
 
 const Noneuclidean = require('../noneuclidean/index.js');
+const noneuclidean = new Noneuclidean();
+
+require("@babel/core").transform("code", {
+    plugins: ["@babel/plugin-proposal-class-properties"]
+});
+
 
 const fallTime = 1000;
 
@@ -15,14 +21,12 @@ const fallTime = 1000;
 Promise.all([
 Scene.root.findFirst('SphereObject')
 ]).then(function (objects) {
-    // const noneuclidean = new Noneuclidean([.33, .33, .33]);
     // const sphere = objects[0];
 
     // Create cannon world and setting gravity
     // const world = new CANNON.World();
     // world.gravity.set(0, -9.82, 0);
     
-
     // Create sphere body and setting its shape and properties
     // const radius = 1;
     // const sphereProps = {
