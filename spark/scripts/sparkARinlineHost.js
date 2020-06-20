@@ -8,10 +8,8 @@ const TouchGestures = require('TouchGestures');
 
 // const Noneuclidean = require('noneuclidean');
 // var noneuclidean = new Noneuclidean;
-
+// Copied from npm module "noneuclidean" without the exports  :(
 let count = Math.random(5);
-
-
 function Track(beatProb) {
     this.beatProb = [.33, .33, .33];
     this.beatCount = 0;
@@ -44,11 +42,27 @@ function Track(beatProb) {
     }
 }
 
+// instrument data aray of arrays = player_controllers
+const instParams =
+    [['player_controller_1', 'player_speaker_1'],
+    ['player_controller_2', 'player_speaker_2'],
+    ['player_controller_3', 'player_speaker_3'],
+    ['player_controller_4', 'player_speaker_4']];
+    
+
+// create instruments
+// class Instrument {
+//     constructor(path) {
+//         this.path = path;
+//     }
+//     play = (path) => {
+//         hit(path);
+//     }
+// }
 
 // create arrays of Instrument & Track objects
-// const trackCount = instParams.length;
-// var instruments = [];
-const trackCount = 4;
+const trackCount = instParams.length;
+var instruments = [];
 var tracks = [];
 for (i = 0; i < trackCount; i++) {
     // let newInstrument = new Instrument(instParams[i]);
@@ -56,6 +70,17 @@ for (i = 0; i < trackCount; i++) {
     let newTrack = new Track([.33, .33, .33]);
     newTrack.play();
     tracks.push(newTrack);
+};
+
+// audio setup
+var players = [];
+for (i = 0; i < trackCount; i++) {
+    let newPlayer = AudioObject.new({
+        speakerName: instParams[i][1],
+        controllerName: instParams[i][0],
+    });
+    players.push(newPlayer);
+    players[i].volume = 1.;
 }
 
 // const fallTime = 1000;
@@ -95,20 +120,15 @@ Scene.root.findFirst('SphereObject')
 
 
     // Configure time step for Cannon
-    const fixedTimeStep = 1.0 / 60.0;
-    const maxSubSteps = 3;
-    const timeInterval = 30;
-    let lastTime;
-    let freeFalling = 1;
-    let lastFallTime;
-    let fallTime = 3000;
+    // const fixedTimeStep = 1.0 / 60.0;
+    // const maxSubSteps = 3;
+    // const timeInterval = 30;
+    // let lastTime;
+    // let freeFalling = 1;
+    // let lastFallTime;
+    // let fallTime = 3000;
     
-    // audio setup
-    const player = AudioObject.new({
-    speakerName: "player_speaker",
-    controllerName: "player_controller",
-    });
-    player.volume = 1.;
+
 
     // collision listener
     // sphereBody.addEventListener("collide", function (event) {
@@ -119,10 +139,12 @@ Scene.root.findFirst('SphereObject')
 
     // retrigger drop
     TouchGestures.onTap().subscribe(function (event) {
-        if (tracks[0].play() == 1) {
-            player.play();    
-        };
-  
+        for (j = 0; j < trackCount; j++) {
+            if (tracks[j].play() == 1) {
+                players[j].play();
+            };
+        }
+
         // sphereBody.position.x = 0;
         // sphereBody.position.y = 10;
         // sphereBody.position.z = 0;
