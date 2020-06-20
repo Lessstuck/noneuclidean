@@ -55,6 +55,7 @@ Define instruments:
         let newInstrument = new Instrument(instParams[i][0]);
         instruments.push(newInstrument);
         let newTrack = new track.Track([.33, .33, .33]);
+        newTrack.play();   // side effect sets initial track count length without generating note
         tracks.push(newTrack);
     }
     
