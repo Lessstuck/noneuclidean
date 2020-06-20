@@ -1,4 +1,4 @@
-const track = require('./noneuclidean/index.js');
+const track = require('./noneuclidean/index-compiled.js');
 const player = require('node-wav-player');
 
 // create instruments

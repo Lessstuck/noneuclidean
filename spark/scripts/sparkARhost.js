@@ -6,12 +6,10 @@ const Patches = require('Patches');
 const AudioObject = require("sparkar-audio-object");
 const TouchGestures = require('TouchGestures');
 
-const Noneuclidean = require('../noneuclidean/index.js');
-const noneuclidean = new Noneuclidean();
-
+const Noneuclidean = require('index-compiled.js');
+const noneuclidean = Noneuclidean.new();
 
 const fallTime = 1000;
-
 
 // Reference SphereObject from Scene
 Promise.all([
