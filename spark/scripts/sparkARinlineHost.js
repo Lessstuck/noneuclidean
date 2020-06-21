@@ -1,9 +1,10 @@
- const Scene = require('Scene');
+const Scene = require('Scene');
 const Time = require('Time')
 const Diagnostics = require('Diagnostics');
 const Patches = require('Patches');
 const AudioObject = require("sparkar-audio-object");
 const TouchGestures = require('TouchGestures');
+const { clearInterval } = require('Time');
 const timeInterval = 250;
 
 // Copied from npm module "noneuclidean" without the exports  :(
@@ -69,21 +70,25 @@ for (i = 0; i < trackCount; i++) {
     players[i].volume = 1.;
 }
 
+var playState = false;
+var idInterval = null;
+Time.setInterval(playTap, timeInterval);
+
 Promise.all([
 Scene.root.findFirst('SphereObject')
 ]).then(function (objects) {
     TouchGestures.onTap().subscribe(function (event) {
+        playState = !playState;
+    }
+)});       
+
+function playTap() {
+    if (playState) {
         for (j = 0; j < trackCount; j++) {
             if (tracks[j].play() == 1) {
                 players[j].play();
             };
-        }
-    });
-    // update
-    var idInterval = Time.setInterval(function (time) {
-    }, timeInterval);
-
-});        
-
-
+        };
+    }
+};
 
