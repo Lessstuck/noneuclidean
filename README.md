@@ -4,6 +4,9 @@
 
 ### Use with Node.js
 
+<details>
+  <summary>Click to expand!</summary>
+    
 In your terminal, install noneuclidean module and your choice of sound player:
 
     npm install noneuclidean;
@@ -74,10 +77,14 @@ Define instruments:
 Finally, call "beat":
 
     beat();
-
+</details>
 
 ### Use with Max’s node.script object
     
 Open patch "maxHost.maxpat". The node.script object loads maxWrapper.js, which requires noneuclidean. 
  
 Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse.
+
+### Use with Spark AR
+
+Unfortunately, Spark AR Studio does not support requiring JS modules. So I pasted the contents of noneuclidean.js into the noneuclidean.arproj script. :(  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
