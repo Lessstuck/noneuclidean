@@ -12,11 +12,11 @@ class Instrument    {
 }
 
 // instrument data aray of arrays = path
-instParams = 
-['./snd/808_Clap.m4a',
-'./snd/808_Closed_HH.m4a',
-'./snd/808_Kick_x3.m4a',
-'./snd/808_Snare_1.m4a']
+instParams =
+    ['./snd/808_Clap.m4a',
+    './snd/808_Closed_HH.m4a',
+    './snd/808_Kick_x3.m4a',
+    './snd/808_Snare_1.m4a'];
 
 // create arrays of Instrument & Track objects
 const trackCount = instParams.length;
