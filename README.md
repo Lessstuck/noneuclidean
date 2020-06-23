@@ -46,8 +46,11 @@ Define instruments:
 
 • Create an array of instrument parameters:
 
-    // instrument data aray of arrays = name, path
-    instParams = ['./snd/808_Kick_x3.m4a', "./snd/808_Closed_HH.m4a"]
+    instParams = 
+    ['./snd/808_Clap.m4a',
+    './snd/808_Closed_HH.m4a',
+    './snd/808_Kick_x3.m4a',
+    './snd/808_Snare_1.m4a']  
     
 • Create arrays of Instrument & Track objects:
 
@@ -74,17 +77,17 @@ Define instruments:
         }, 250);
     }
 
-Finally, call "beat":
+Finally:
 
     beat();
 </details>
 
 ### Use with Max’s node.script object
     
-Open patch "maxHost.maxpat". The node.script object loads maxWrapper.js, which requires noneuclidean. 
+Open patch [maxHost.maxpat](maxhost/). The node.script object loads maxWrapper.js, which requires noneuclidean. 
  
 Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse.
 
 ### Use with Spark AR
 
-Unfortunately, Spark AR Studio does not support requiring JS modules. So I pasted the contents of noneuclidean.js into the noneuclidean.arproj script. :(  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
+Unfortunately, Spark AR Studio does not support requiring JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](sparkAR/)script. Sad.  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
