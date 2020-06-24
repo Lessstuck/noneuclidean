@@ -86,11 +86,11 @@ Finally:
     
 Open patch [maxHost.maxpat](maxhost/). The node.script object loads maxWrapper.js, which requires noneuclidean. 
  
-Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse.
+Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse. This way of using Node offloads timing and audio playback to MaxMSP, which is optmized for that.
 
 ### Use with Spark AR
 
-Unfortunately, Spark AR Studio does not support requiring JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Sad.  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
+Unfortunately, Spark AR Studio does not support importing JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Sad.  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
 
 ### Use in a browser
 
