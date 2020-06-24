@@ -94,4 +94,4 @@ Unfortunately, Spark AR Studio does not support requiring JS modules. So I paste
 
 ### Use in a browser
 
-[This web page](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. 
+[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. 
