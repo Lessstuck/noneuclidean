@@ -91,3 +91,7 @@ Turn on audio and metronome. Send beatProb list messages to create tracks, bangs
 ### Use with Spark AR
 
 Unfortunately, Spark AR Studio does not support requiring JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Sad.  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
+
+### Use in a browser
+
+[This web page](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. 
