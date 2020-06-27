@@ -1,7 +1,5 @@
-let count = Math.random(5);
 
-
-function Track(beatProb)    {
+function Track(beatProb) {
     this.beatProb = [.33, .33, .33];
     this.beatCount = 0;
     this.maxBeats = 0;

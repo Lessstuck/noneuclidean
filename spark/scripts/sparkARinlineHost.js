@@ -8,7 +8,6 @@ const { clearInterval } = require('Time');
 const timeInterval = 250;
 
 // Copied from npm module "noneuclidean" without the exports  :(
-let count = Math.random(5);
 function Track(beatProb) {
     this.beatProb = [.33, .33, .33];
     this.beatCount = 0;
