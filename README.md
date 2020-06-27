@@ -1,6 +1,9 @@
 # noneuclidean
 #### Multiplatform (Node.js, SparkAR, MaxMSP (node.script)) module for pure polyrhythmic ("noneuclidean") timing of events
 
+Most of the world’s music is constructed on repeated rhythmic patterns, typically between 2 and 40 seconds long. These are subdivided into smaller patterns to create rhythm. A recent approach to this structure evolved from drum machine programming in the early 2000’s. The so-called Euclidean Rhythms are typically based on a contant pulse, with every subrhythm consisting of an even number of pulses. However, even with the possible complexity of multiple tracks of unusual ratios, the pattern still repeats.
+
+My "non-Euclidean rhythm" has nothing to do with parallel lines meeting; it's an extension of Euclidean Rhythm, but each track’s patterns change each beat, and the overall patter never repeats.
 
 ### Use with Node.js
 
