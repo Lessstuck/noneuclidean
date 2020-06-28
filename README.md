@@ -1,9 +1,17 @@
 # noneuclidean
 #### Multiplatform (Node.js, SparkAR, MaxMSP (node.script)) module for pure polyrhythmic ("noneuclidean") timing of events
 
-Most of the world’s music is constructed on repeated rhythmic patterns, typically between 2 and 40 seconds long. These are subdivided into smaller patterns to create rhythm. A recent approach to this structure evolved from drum machine programming in the early 2000’s. The so-called Euclidean Rhythms are typically based on a contant pulse, with every subrhythm consisting of an even number of pulses. However, even with the possible complexity of multiple tracks of unusual ratios, the pattern still repeats.
+Most of the world’s music is constructed on repeated patterns, typically between 2 and 40 seconds long. These are subdivided into smaller patterns among several voices to create rhythm. In some cases, notably West African traditional music, the syncopation is so complex that it’s impossible to determine which beat is the beginning of the pattern, but it does repeat. Western pop music drum machine programming in the early 2000’s produced an algorithmic style called “Euclidean Rhythm”. This is typically based on a contant pulse, with every subrhythm consisting of an even number of pulses. However, even with the possible complexity of multiple tracks of unusual ratios, the pattern still repeats.
 
-My "non-Euclidean rhythm" has nothing to do with parallel lines meeting; it's an extension of Euclidean Rhythm, but each track’s patterns change each beat, and the overall patter never repeats.
+I have long used algorithmic rhythms in which there is no repeating overall pattern. This works well with dancers, who often disregard composed rhythmic patterns, preferring to count their own phrasing on top of the pulse. To contrast my approach with Euclidean Rhythm, I playfully call my algorithm "non-Euclidean".
+
+The JavaScript module noneuclidean.js implements one object, "Track", which has a method "play". To instantiate a new Track, one includes an argument with is an array of probabilities whose sum is 1. The play method uses a random function to select a number of beats to count. If the 0th element of the array is chosen, the number of beats is 1; if the first element is chosen, then play counts 2 beats, etc. Each time play() is called a beat is counted, and when the count reaches the chosen beat number, a new number is randomly selected.
+
+By instantiating multiple tracks, polyrhythms are created. Since each track is calling its own play method and storing its own internal state, the tracks rarely start on the same beat. Thus there is no overall repeating pattern.
+
+This repository includes 4 use cases of the module. Each case must provide a method to create multiple tracks, call the play method, and–if play() returns 1–play a sound. In the first 2 cases, node.js and MaxMSP’s hosting of node.js, the noneucliden module is installed using the [published version](https://www.npmjs.com/package/noneuclidean). The html version uses native JavaScript modules, which requires adding "export" at the beginning of the code to convert noneuclidean.js to noneuclidean.mjs. The Spark AR Studio version does not allow importing modules, so the module code must be pasted into the main script.
+
+For the sake of simplicity, all demos use a pulse scheduler (setInterval) to call play(), which then calls a sound player when the track's play() returns 1. Since JavaScript is single-threaded, this results in timing issues. Ideally, one would use track.play() to decide in advance which tracks play, and the exact timing would be independent of the noneuclidean.js execution time.
 
 ### Use with Node.js
 
@@ -89,12 +97,11 @@ Finally:
     
 Open patch [maxHost.maxpat](maxhost/). The node.script object loads maxWrapper.js, which requires noneuclidean. 
  
-Turn on audio and metronome. Send beatProb list messages to create tracks, bangs to increment pulse. This way of using Node offloads timing and audio playback to MaxMSP, which is optmized for that.
-
+Turn on audio, metronome, and "start script". Send beatProb list messages to create tracks, bangs to increment pulse. This way of using Node offloads timing and audio playback to MaxMSP, which can be further optimized.
 ### Use with Spark AR
 
-Unfortunately, Spark AR Studio does not support importing JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Sad.  It works, though! Send it to SparkAR on your phone, and tap a floor target to start and stop the beat.
+Unfortunately, Spark AR Studio does not support importing JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Although this is bad practice, it works. Send it to the SparkAR app on your phone, and tap a floor target to start and stop the beat.
 
 ### Use in a browser
 
-[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. 
+[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. For simplicity’s sake, I use plain-vanilla html5 audio playback and native JavaScript modules. In a future version, I would like to use Date() to lock the timing to the client’s clock.
