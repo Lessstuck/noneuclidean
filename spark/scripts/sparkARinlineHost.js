@@ -5,7 +5,7 @@ const Patches = require('Patches');
 const AudioObject = require("sparkar-audio-object");
 const TouchGestures = require('TouchGestures');
 const { clearInterval } = require('Time');
-const timeInterval = 250;
+const timeInterval = 125;
 
 // Copied from npm module "noneuclidean" without the exports  :(
 function Track(beatProb) {

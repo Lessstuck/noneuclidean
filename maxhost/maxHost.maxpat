@@ -154,7 +154,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 38.0, 76.0, 63.0, 22.0 ],
-					"text" : "metro 250"
+					"text" : "metro 125"
 				}
 
 			}
@@ -237,8 +237,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

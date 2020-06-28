@@ -38,7 +38,7 @@ const beat = () => {
                 hit(instruments[j].path);
             };
         }
-    }, 250);
+    }, 125);
 }
  
 // play sound
