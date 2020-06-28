@@ -1,5 +1,5 @@
 # noneuclidean
-#### Multiplatform (Node.js, SparkAR, MaxMSP (node.script)) module for pure polyrhythmic ("noneuclidean") timing of events
+#### Multiplatform (Node.js, SparkAR, MaxMSP, browser) module for pure polyrhythmic ("noneuclidean") timing of events
 
 <details>
   <summary>Click to expand!</summary>
@@ -15,6 +15,7 @@ By instantiating multiple tracks, polyrhythms are created. Since each track is c
 This repository includes 4 use cases of the module. Each case provides a method to create multiple tracks and call the play method. For each track, if play() returns 1, the caller will play a sound. In the first 2 cases, node.js and MaxMSP’s hosting of node.js, the noneucliden module is installed using the [published version](https://www.npmjs.com/package/noneuclidean). The html version uses native JavaScript modules, which requires adding "export" at the beginning of the code and deleting the “exports.” from the end of the code in order to convert noneuclidean.js to noneuclidean.mjs. The Spark AR Studio version does not allow importing modules, so the module code must be pasted into the main script, again with the exports deleted.
 
 For the sake of simplicity, all demos use a pulse scheduler (setInterval) to call play(), which then calls a sound player when the track's play() returns 1. Since JavaScript is single-threaded, this results in timing issues. Ideally, one would use track.play() to decide in advance which tracks play, and the exact timing would be independent of the noneuclidean.js execution time.
+</details>
 
 ### Use with Node.js
 
