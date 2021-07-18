@@ -1,5 +1,6 @@
 const track = require('./noneuclidean/index.js');
 const player = require('node-wav-player');
+const now = require('performance-now');
 
 // create instruments
 class Instrument    {
