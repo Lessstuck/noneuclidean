@@ -1,27 +1,22 @@
-// var time = 0,
-//     elapsed = '0.0';
-
-// setInterval(function()
-// {
-//     time += 100;
-
-//     elapsed = Math.floor(time / 100) / 10;
-//     if (Math.round(elapsed) == elapsed) { elapsed += '.0' }    // converts "integer" Number to "float" String
-//     console.log(elapsed);
-
-// }, 100);
 
 const now = require("performance-now");
 
-var start = now();
-var elapsed = '0.0';
+let start = now();
+let elapsed = 0;
+let time = 0;
+let diff = 0;
 
-setInterval(function () {
-    var time = now() - start;
-    console.log(Math.floor(time));
-    // elapsed = Math.floor(time / 100) / 10;
-    // if (Math.round(elapsed) == elapsed) { elapsed += '.0'; }
 
-    // console.log(elapsed);
+function instance() {
+    time += 1000;
 
-}, 100);
+    elapsed = Math.floor(time / 1000);
+    // if (Math.round(elapsed) == elapsed) { console.log(elapsed) }
+
+    console.log(elapsed);
+    diff = (now() - start) - time;
+    console.log(diff);   // correction is never more that 6ms
+    setTimeout(instance, (1000 - diff));
+}
+
+setTimeout(instance, 1000);

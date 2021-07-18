@@ -32,15 +32,25 @@ for (i = 0; i < trackCount; i++)    {
 }
 
 // generate pulse, call noneucledean Track.play method, and play instrument
+let start = now();
+let elapsed = 0;
+let time = 0;
+let diff = 0;
+
 const beat = () => {
-    setInterval(() => {
-        for (j = 0; j < trackCount; j++)    {
+    function instance() {
+        time += 125;
+        for (j = 0; j < trackCount; j++) {
             if (tracks[j].play() == 1) {
                 hit(instruments[j].path);
             };
         }
-    }, 125);
+        diff = (now() - start) - time;
+        setTimeout(instance, (125 - diff));
+    }
+    setTimeout(instance, 125);
 }
+
  
 // play sound
 const hit = (path) => {
