@@ -15,7 +15,7 @@ By instantiating multiple tracks, polyrhythms are created. Since each track is c
 
 This repository includes four use cases of the module. Each case provides a method to create multiple tracks and call the play method. For each track, if play() returns 1, the caller will play a sound. In the first two cases, node.js and MaxMSP’s hosting of node.js, the noneucliden module is installed using the [published version](https://www.npmjs.com/package/noneuclidean) of the module. The html version uses a native JavaScript module, which requires adding "export" at the beginning of the code and deleting the “exports.” from the end of the code in order to convert noneuclidean.js to noneuclidean.mjs. The Spark AR Studio version does not allow importing modules, so the module code must be pasted into the main script, again with the exports deleted.
 
-All demos use a pulse scheduler (setInterval) to call play(), which then calls a sound player when the track's play() returns 1. This makes the demos easy to understand, but since JavaScript is single-threaded, there can be timing issues. One should therefore use track.play() to decide in advance which tracks play, so that the exact timing would be independent of the noneuclidean.js execution time.
+A timer (beat()) calls play(), which then calls a sound player when the track's play() returns 1. This makes the demos easy to understand, but since JavaScript is single-threaded, there can be timing issues. One should therefore use track.play() to decide in advance which tracks play, so that the exact timing would be independent of the noneuclidean.js execution time. app.js uses the performance-now module for improved timing vis-à-vis setInterval.
 
 </details>
 
@@ -24,15 +24,17 @@ All demos use a pulse scheduler (setInterval) to call play(), which then calls a
 <details>
   <summary>Click to expand!</summary>
     
-In your terminal, install noneuclidean module and your choice of sound player:
+In your terminal, install noneuclidean module, the performance-now module, and your choice of sound player:
 
     npm install noneuclidean;
+    npm install performance-now;
     npm install node-wav-player;
 
 In your node app:
 
     const track = require('noneuclidean');
     const player = require('node-wav-player');
+    const now = require('performance-now');
     
 A track takes one parameter, "beatProb", an array of the relative probability (0.0 - 1.0) that a beat count (index + 1) will be chosen.
 
@@ -84,16 +86,30 @@ Define instruments:
     
 • Define "beat" to generate pulse, call noneucledean Track.play method, and play instrument:
 
+    let start = now();
+    let elapsed = 0;
+    let time = 0;
+    let diff = 0;
+    
+    let start = now();
+    let elapsed = 0;
+    let time = 0;
+    let diff = 0;
+
     const beat = () => {
-        setInterval(() => {
-            for (j = 0; j < trackCount; j++)    {
+        function instance() {
+            time += 125;
+            for (j = 0; j < trackCount; j++) {
                 if (tracks[j].play() == 1) {
                     hit(instruments[j].path);
                 };
             }
-        }, 125);
+            diff = (now() - start) - time;
+            setTimeout(instance, (125 - diff));
+        }
+        setTimeout(instance, 125);
     }
-
+                                       
 Finally:
 
     beat();
@@ -106,8 +122,8 @@ Open patch [maxHost.maxpat](maxhost/). The node.script object loads maxWrapper.j
 Turn on audio, metronome, and "start script". Send beatProb list messages to create tracks, bangs to increment pulse. This way of using Node offloads timing and audio playback to MaxMSP, which can be further optimized.
 ### Use with Spark AR
 
-Unfortunately, Spark AR Studio does not support importing JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Although this is bad practice, it works. Send it to the SparkAR app on your phone, and tap a floor target to start and stop the beat.
+Unfortunately, Spark AR Studio does not support importing JS modules. So I pasted the contents of noneuclidean.js into the [noneuclidean.arproj](spark/) script. Although this is bad practice, it works. Without the performance-now module, the timing is unreliable. Send it to the SparkAR app on your phone, and tap a floor target to start and stop the beat.
 
 ### Use in a browser
 
-[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. For simplicity’s sake, I use plain-vanilla html5 audio playback and native JavaScript modules. In a future version, I would like to use Date() to lock the timing to the client’s clock.
+[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. For simplicity’s sake, I use plain-vanilla html5 audio playback and native JavaScript modules. app.js uses the performance-now module for improved timing vis-à-vis setInterval. In a future version I hope to switch to performance.now for better timing in the DOM.
