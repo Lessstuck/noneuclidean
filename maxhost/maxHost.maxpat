@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 5,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 173.0, 81.0, 685.0, 454.0 ],
+		"rect" : [ 173.0, 81.0, 677.0, 538.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,58 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 122.0, 318.5, 77.0, 22.0 ],
+					"text" : "absolutepath"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 122.0, 288.0, 83.0, 22.0 ],
+					"text" : "loadmess snd"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 122.0, 349.5, 79.0, 22.0 ],
+					"text" : "readfolder $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 122.0, 379.5, 91.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0
+					}
+,
+					"text" : "polybuffer~ snd"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -67,8 +119,8 @@
 					"id" : "obj-23",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 39.0, 204.0, 172.0, 22.0 ],
 					"text" : "poly~ maxHostPoly 8 @steal 1"
 				}
@@ -104,18 +156,19 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 394.0, 45.0, 45.0 ]
+					"patching_rect" : [ 38.0, 393.0, 45.0, 45.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"channels" : 1,
 					"id" : "obj-25",
 					"lastchannelcount" : 0,
 					"maxclass" : "live.gain~",
-					"numinlets" : 2,
-					"numoutlets" : 5,
-					"outlettype" : [ "signal", "signal", "", "float", "list" ],
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 38.0, 241.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
@@ -237,6 +290,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -275,6 +330,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-2", 0 ]
 				}
@@ -289,13 +358,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-25", 1 ],
-					"source" : [ "obj-23", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-23", 0 ]
 				}
@@ -304,13 +366,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 1 ],
-					"source" : [ "obj-25", 1 ]
+					"order" : 0,
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
+					"order" : 1,
 					"source" : [ "obj-25", 0 ]
 				}
 
@@ -326,6 +390,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -390,34 +461,6 @@
 				"bootpath" : "~/Documents/GitHub/noneuclidean/maxhost",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "808_Clap.m4a",
-				"bootpath" : "~/Documents/GitHub/Lessstuck.github.io/noneuclidean/sounds",
-				"patcherrelativepath" : "../../Lessstuck.github.io/noneuclidean/sounds",
-				"type" : "M4a",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "808_Closed_HH.m4a",
-				"bootpath" : "~/Documents/GitHub/Lessstuck.github.io/noneuclidean/sounds",
-				"patcherrelativepath" : "../../Lessstuck.github.io/noneuclidean/sounds",
-				"type" : "M4a",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "808_Kick_x3.m4a",
-				"bootpath" : "~/Documents/GitHub/Lessstuck.github.io/noneuclidean/sounds",
-				"patcherrelativepath" : "../../Lessstuck.github.io/noneuclidean/sounds",
-				"type" : "M4a",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "808_Snare_1.m4a",
-				"bootpath" : "~/Documents/GitHub/Lessstuck.github.io/noneuclidean/sounds",
-				"patcherrelativepath" : "../../Lessstuck.github.io/noneuclidean/sounds",
-				"type" : "M4a",
 				"implicit" : 1
 			}
  ],
