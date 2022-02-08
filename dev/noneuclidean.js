@@ -1,11 +1,10 @@
 let count = Math.random(5);
 
-export default function Track (beatProb = [.33, .33, .33]) {
+export function Track (beatProb = [.33, .33, .33]) {
         this.beatProb = beatProb;
         this.beatCount = 0;
         this.maxBeats = 0;
-    };
-    Time.prototype.play = () => {
+        play = () => {
         // find new maxBeats at end of count
         if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();
@@ -31,4 +30,4 @@ export default function Track (beatProb = [.33, .33, .33]) {
             this.beatCount++; 
         }
     };
-
+};
