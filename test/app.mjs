@@ -1,4 +1,4 @@
-import {Track} from "./build/noneuclidean.es.js"
+import {Track} from "../build/noneuclidean.mjs"
 import player from "sound-play";
 
 function now() {
@@ -19,10 +19,10 @@ class Instrument {
 
 // instrument data aray of arrays = path
 let instParams = [
-  "./snd/808_Clap.m4a",
-  "./snd/808_Closed_HH.m4a",
-  "./snd/808_Kick_x3.m4a",
-  "./snd/808_Snare_1.m4a",
+  "../snd/808_Clap.m4a",
+  "../snd/808_Closed_HH.m4a",
+  "../snd/808_Kick_x3.m4a",
+  "../snd/808_Snare_1.m4a",
 ];
 
 // create arrays of Instrument & Track objects

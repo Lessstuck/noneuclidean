@@ -1,5 +1,5 @@
 const maxAPI = require("max-api");
-const Track = require("../noneuclidean/noneuclidean.js");
+const {Track} = require("../build/noneuclidean.cjs.js");
 
 var tracks = [];
 var trackCount = 0;
