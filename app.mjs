@@ -1,5 +1,5 @@
-import { Track } from "./noneuclidean/noneuclidean.mjs";
-// const player = require("node-wav-player");
+import {Track} from "./build/noneuclidean.es.js"
+import player from "sound-play";
 
 function now() {
   return process.hrtime()[0];
@@ -48,8 +48,8 @@ const beat = () => {
     time += 125;
     for (let j = 0; j < trackCount; j++) {
       if (tracks[j].play() == 1) {
-        // hit(instruments[j].path);
-        console.log("foop");
+        player.play(instruments[j].path);
+
       }
     }
     diff = now() - start - time;

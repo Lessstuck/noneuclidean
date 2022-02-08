@@ -4,7 +4,7 @@ export function Track (beatProb = [.33, .33, .33]) {
         this.beatProb = beatProb;
         this.beatCount = 0;
         this.maxBeats = 0;
-        play = () => {
+        this.play = () => {
         // find new maxBeats at end of count
         if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();

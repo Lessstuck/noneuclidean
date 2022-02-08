@@ -1,4 +1,5 @@
 {
+	"type": "module",
   "dependencies": {
     "sound-play": "^1.1.0"
   }
