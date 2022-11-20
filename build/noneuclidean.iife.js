@@ -27,6 +27,13 @@ var noneuclidean = (function (exports) {
       }
     }
     play = () => {
+      let playIt;
+      if (this.beatCount == 0) {
+        // if at beginning of phrase, play it
+        playIt = 1;
+      } else {
+        playIt = 0;
+      }
       // calculate new phrase length asynchronously
       setTimeout(() => {
         if (this.beatCount == this.maxBeats) {
@@ -46,12 +53,7 @@ var noneuclidean = (function (exports) {
           this.beatCount++;
         }
       }, 0);
-      // if at beginning of phrase, play!
-      if (this.beatCount == 0) {
-        return 1;
-      } else {
-        return 0;
-      }
+      return playIt;
     };
   }
 
