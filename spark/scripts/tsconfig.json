@@ -1,1 +1,29 @@
-{"include":["*.js"],"compilerOptions":{"baseUrl":"/private/var/folders/6c/z8fn7qhn5476w_8xk77pbv440000gn/T/14976a1dd986e626b4241bb22ef2d5ae753f7/skylight-typedefs","lib":["ES2015"],"outDir":"/private/var/folders/6c/z8fn7qhn5476w_8xk77pbv440000gn/T/14976a1dd986e626b4241bb22ef2d5ae753f7/skylight-typedefs/out-dir","allowJs":true,"checkJs":true}}
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "/Users/les/Library/Caches/Facebook/Spark AR Studio/Scripting",
+    "checkJs": false,
+    "esModuleInterop": true,
+    "lib": [
+      "ES2019"
+    ],
+    "outDir": "/Users/les/Library/Caches/Facebook/Spark AR Studio/Scripting/out-dir",
+    "paths": {
+      "*": [
+        "skylight-typedefs/adb1e1f1f5435069/*",
+        "skylight-node_modules/*"
+      ]
+    },
+    "target": "es5",
+    "typeRoots": [
+      "/Users/les/Library/Caches/Facebook/Spark AR Studio/Scripting/skylight-node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "./**/*.js",
+    "./**/*.ts"
+  ]
+}
