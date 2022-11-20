@@ -1,18 +1,10 @@
-let count = Math.random(5);
-
-export function Track(beatProb = [0.33, 0.33, 0.33]) {
-  this.beatProb = beatProb;
-  this.beatCount = 0;
-  this.maxBeats = 0;
-  // normalize beatProb
-  const initialValue = 0;
-  const beatProbSum = beatProb.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    initialValue
-  );
-  const beatProbNorm = beatProb.map((x) => x / beatProbSum);
-
-  this.play = () => {
+export class Track {
+  constructor(beatProb) {
+    this.beatProb = [0.33, 0.33, 0.33];
+    this.beatCount = 0;
+    this.maxBeats = 0;
+  }
+  play() {
     // find new maxBeats at end of count
     if (this.beatCount == this.maxBeats) {
       let coinToss = Math.random();
@@ -37,5 +29,5 @@ export function Track(beatProb = [0.33, 0.33, 0.33]) {
     else {
       this.beatCount++;
     }
-  };
+  }
 }
