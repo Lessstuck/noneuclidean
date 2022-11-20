@@ -1,33 +1,55 @@
-export class Track {
-  constructor(beatProb) {
-    this.beatProb = [0.33, 0.33, 0.33];
+class Track {
+  constructor(beatProb = [0.33, 0.33, 0.33]) {
+    this.beatProb = beatProb;
     this.beatCount = 0;
-    this.maxBeats = 0;
-  }
-  play() {
-    // find new maxBeats at end of count
-    if (this.beatCount == this.maxBeats) {
-      let coinToss = Math.random();
-      let beatProbAccum = 0;
-      var maxCount = this.beatProb.length;
-      var m = 0;
-      for (m = 0; m < maxCount; m++) {
-        beatProbAccum = beatProbAccum + this.beatProb[m];
-        if (coinToss < beatProbAccum) {
-          this.maxBeats = m + 1; // lengths 1, 2, 3
-          this.beatCount = 0;
-          return 0;
-        }
+    this.maxBeats = 0; // length of this phrase
+    // normalize beatProb
+    const initialValue = 0;
+    const beatProbSum = this.beatProb.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      initialValue
+    );
+    this.beatProbNorm = this.beatProb.map((x) => x / beatProbSum);
+    // starting beat count
+    let coinToss = Math.random();
+    let beatProbNormAccum = this.beatProbNorm[0];
+    let maxCount = this.beatProbNorm.length;
+    for (let m = 0; m < maxCount; m++) {
+      if (coinToss <= beatProbNormAccum) {
+        this.maxBeats = m + 1; // new phrase length (lengths 1, 2, 3, … )
+        this.beatCount = 0;
+        break;
       }
-    }
-    // play sound on first count
-    else if (this.beatCount == 0) {
-      this.beatCount++;
-      return 1;
-    }
-    // just count
-    else {
-      this.beatCount++;
+      beatProbNormAccum = beatProbNormAccum + this.beatProbNorm[m + 1];
     }
   }
+  play = () => {
+    // calculate new phrase length asynchronously
+    setTimeout(() => {
+      if (this.beatCount == this.maxBeats) {
+        // if at the end of a phrase, pick a new one
+        let coinToss = Math.random();
+        let beatProbNormAccum = this.beatProbNorm[0];
+        let maxCount = this.beatProbNorm.length;
+        for (let m = 0; m < maxCount; m++) {
+          if (coinToss <= beatProbNormAccum) {
+            this.maxBeats = m + 1; // new phrase length (lengths 1, 2, 3, … )
+            this.beatCount = 0;
+            break;
+          }
+          beatProbNormAccum = beatProbNormAccum + this.beatProbNorm[m + 1];
+        }
+      } else {
+        this.beatCount++;
+      }
+    }, 0);
+    // if at beginning of phrase, play!
+    if (this.beatCount == 0) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
 }
+
+export { Track };
