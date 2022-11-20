@@ -1,5 +1,3 @@
-let count = Math.random(5);
-
 export function Track(beatProb = [0.33, 0.33, 0.33]) {
   this.beatProb = beatProb;
   this.beatCount = 0;
