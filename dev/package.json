@@ -8,7 +8,7 @@
 		"url": "https://github.com/rollup/rollup"
 	},
 	"scripts": {
-		"js": "rollup --config"
+		"build": "rollup --config"
 	},
 	"devDependencies": {
 		"rollup": "^2.34.0"
