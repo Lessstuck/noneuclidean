@@ -126,4 +126,4 @@ Unfortunately, Spark AR Studio does not support importing JS modules. So I paste
 
 ### Use in a browser
 
-[This](https://lessstuck.github.io/noneuclidean/) is meant to be the simplest example of using noneuclidean in a web page. For simplicity’s sake, I use plain-vanilla html5 audio playback and native JavaScript modules. app.js uses the performance-now module for improved timing vis-à-vis setInterval. In a future version I hope to switch to performance.now for better timing in the DOM.
+[This](https://lessstuck.github.io/noneuclidean/web) is meant to be the simplest example of using noneuclidean in a web page. For simplicity’s sake, I use plain-vanilla html5 audio playback and native JavaScript modules. app.js uses the performance-now module for improved timing vis-à-vis setInterval. In a future version I hope to switch to performance.now for better timing in the DOM.
